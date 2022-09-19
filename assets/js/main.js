@@ -1,11 +1,11 @@
 /*const my_number = Math.floor(Math.random()*1000);*/
 const my_number = 8123150307;
-/*const peer = new Peer(my_number);*/
-const peer = new Peer(my_number,{
+const peer = new Peer(my_number);
+/*const peer = new Peer(my_number,{
     host:"localhost",
     port:9000,
     path:"/myapp"
-});
+});*/
 //var navigator = navigator.getUserMedia()
 var navigator = navigator.mediaDevices.getUserMedia = (navigator.mediaDevices.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
 var mystream;
