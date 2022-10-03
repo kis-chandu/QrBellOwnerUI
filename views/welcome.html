@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>QR Bell Owner</title>
+</head>
+<body>
+<div id="welcome">
+    <header style="text-align:center">
+        <p>
+            <span style="font-size: 5vw;">Welcome to</span>
+            <br>
+            <span style="font-size: 10vw; font-weight: 700;">QR Bell</span>
+            <br>
+            <span style="font-size: 5vw;">Ultimate Solution For Your DoorBell !</span>
+        </p>
+    </header>
+</div>
+<div id="loginBlock" class="row">
+    <div class="col-md-10">
+        <label style="font-size: 3vw;">Phone Number : </label>
+        <input style="font-size: 2.5vw;" type="text" placeholder="Please enter your phone number" id="phoneNumber">
+    </div>
+    </p>
+    <div class="col-md-2">
+        <button style="font-size: 2.5vw;" class="btn btn-info" onclick="requestOtp()">Get OTP</button>
+    </div>
+</div>
+</p>
+<div id="otpBlock" class="row">
+    <div class="col-md-10">
+        <label style="font-size: 3vw;">OTP : </label>
+        <input style="font-size: 2.5vw;" type="text" class="form-control" id="otp" placeholder="Enter OTP">
+    </div>
+    </p>
+    <div calss="col-md-2">
+        <button id="submitOtpButton" style="font-size: 2.5vw;" class="btn btn-info" onclick="submitOtp()">Submit OTP</button>
+    </div>
+
+</div>
+</p>
+
+<div id="registerBlock" class="row">
+    <div class="col-md-10">
+        <label style="font-size: 3vw;">Name : </label>
+        <input style="font-size: 2.5vw;" type="text" placeholder="Please enter your name" id="name">
+    </div>
+    </p>
+    <div class="col-md-10">
+        <label style="font-size: 3vw;">Email Id: </label>
+        <input style="font-size: 2.5vw;" type="text" placeholder="Please enter your email id" id="email">
+    </div>
+    </p>
+    <div class="col-md-10">
+        <label style="font-size: 3vw;">Door Name: </label>
+        <input style="font-size: 2.5vw;" type="text" placeholder="Please enter a name of your choice" id="door">
+    </div>
+    </p>
+</div>
+<div id="submitButton" class="row">
+    </p>
+
+    <div class="col-md-2">
+        <button style="font-size: 2.5vw;" class="btn btn-info" onclick="registerUser()">Submit</button>
+    </div>
+    </p>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+<script src="/js/welcome.js"></script>
+<script>
+    window.onload = hideDisplay();
+</script>
+</body>
+</html>

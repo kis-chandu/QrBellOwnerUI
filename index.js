@@ -4,8 +4,12 @@ const app = express();
 app.use(express.static(path.join(__dirname,"/assets")));
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"views/index.html"));
+    res.sendFile(path.join(__dirname,"views/welcome.html"));
 })
+
+app.get('/thankYou', function(req, res){
+    res.sendFile(path.join(__dirname,"views/thankYou.html"));
+});
 
 app.listen("9002",(req,res)=>{
     console.log("Server started");
