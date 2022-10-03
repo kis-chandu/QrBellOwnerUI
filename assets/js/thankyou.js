@@ -83,6 +83,7 @@ var myStream;
 var myCall;
 
 function answer(){
+    Android.answerCall();
     if(myCall){
         myCall.answer(myStream);
         myCall.on("stream",connectCall);
