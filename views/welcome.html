@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-->
     <title>QR Bell Owner</title>
 </head>
-<body>
+<body style="margin:16px;padding:10px">
 <div id="welcome">
     <header style="text-align:center">
         <p>
@@ -17,27 +21,40 @@
         </p>
     </header>
 </div>
+<!--<div class="container">
+    <div id="loginBlock" class="row">
+        <div class="col-md-12 bg-light text-right">
+
+        </div>
+    </div>
+</div>-->
 <div id="loginBlock" class="row">
     <div class="col-md-10">
+        <!--<div class="form_group">
+            <input type="tel" id="txtPhone" class="txtbox" />
+            <input id="btnSubmit" class="btn" type="button" value="SUBMIT" >
+        </div>-->
         <label style="font-size: 3vw;">Phone Number : </label>
-        <input style="font-size: 2.5vw;" type="text" placeholder="Please enter your phone number" id="phoneNumber">
+        <input type="tel" style="font-size: 2.5vw;" placeholder="Please enter your phone number" id="phoneNumber"  />
+        <button style="font-size: 2.5vw;" class="btn btn-info" onclick="requestOtp()">Get OTP</button>
+        <!--<input style="font-size: 2.5vw;" type="text" placeholder="Please enter your phone number" id="phoneNumber">-->
     </div>
     </p>
-    <div class="col-md-2">
+    <!--<div class="col-md-2">
         <button style="font-size: 2.5vw;" class="btn btn-info" onclick="requestOtp()">Get OTP</button>
-    </div>
+    </div>-->
 </div>
 </p>
 <div id="otpBlock" class="row">
     <div class="col-md-10">
         <label style="font-size: 3vw;">OTP : </label>
         <input style="font-size: 2.5vw;" type="text" class="form-control" id="otp" placeholder="Enter OTP">
-    </div>
-    </p>
-    <div calss="col-md-2">
         <button id="submitOtpButton" style="font-size: 2.5vw;" class="btn btn-info" onclick="submitOtp()">Submit OTP</button>
     </div>
-
+    </p>
+    <!--<div class="col-md-2">
+        <button id="submitOtpButton" style="font-size: 2.5vw;" class="btn btn-info" onclick="submitOtp()">Submit OTP</button>
+    </div>-->
 </div>
 </p>
 
@@ -72,7 +89,37 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 <script src="/js/welcome.js"></script>
 <script>
+
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput-jquery.min.js"></script>
+<!--<script type="text/javascript">
+        $(function () {
+            var code = "+91"; // Assigning value from model.
+            $('#txtPhone').val(code);
+            $('#txtPhone').intlTelInput({
+                autoHideDialCode: true,
+                autoPlaceholder: "ON",
+                dropdownContainer: document.body,
+                formatOnDisplay: true,
+                hiddenInput: "full_number",
+                initialCountry: "auto",
+                nationalMode: true,
+                placeholderNumberType: "MOBILE",
+                preferredCountries: ['US'],
+                separateDialCode: true
+            });
+            $('#btnSubmit').on('click', function () {
+                var code = $("#txtPhone").intlTelInput("getSelectedCountryData").dialCode;
+                var phoneNumber = $('#txtPhone').val();
+                var name = $("#txtPhone").intlTelInput("getSelectedCountryData").name;
+                alert('Country Code : ' + code + '\nPhone Number : ' + phoneNumber + '\nCountry Name : ' + name);
+            });
+        });
+    </script>-->
+<script>
     window.onload = hideDisplay();
+    window.onload = populateIsdCode();
 </script>
 </body>
 </html>

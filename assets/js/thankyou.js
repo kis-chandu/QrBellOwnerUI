@@ -1,8 +1,11 @@
+const qrBellHost = 'http://localhost:5000/qrbell/';
 
-const qrBellHost = 'http://localhost:8080/qrbell/';
 var name;
+var isdCode;
 var phone;
 var apiResponse;
+var createdDate;
+var userStatus;
 
 var callBlock = document.getElementById('callBlock');
 var qrCodeBlock = document.getElementById('qrCodeBlock');
@@ -33,17 +36,53 @@ var thankYouBlock = document.getElementById('thankYouBlock');
 
 function hideBlock(){
     callBlock.style.display = 'none';
+
+    if(userStatus == 'LICENSED'){
+        licenseBlock.style.display = 'none';
+    }
 }
 
 function getUrlParams(){
-    const urlParams = new URLSearchParams(window.location.search);
+    /*const urlParams = new URLSearchParams(window.location.search);
     name = urlParams.get('firstname');
     phone = urlParams.get('phone');
+    isdCode = urlParams.get('isdCode');*/
+
+    console.log('LocalStorage',localStorage);
+
+    name = localStorage.getItem('name');
+    phone = localStorage.getItem('phoneNumber');
+    isdCode = localStorage.getItem('isdCode');
+    trialExpiryDate = localStorage.getItem('trialExpiryDate');
+    userStatus = localStorage.getItem('userStatus');
+
+if(userStatus == 'TRIAL'){
+    licenseBlock.style.display = 'block';
+    freeTrialMsg.style.display = 'block';
+    getLicenseMsg.style.display = 'block';
+    getLicenseButton.style.display = 'block';
+    trialExpiredMsg.style.display = 'none';
+
+}
+
+if(userStatus == 'EXPIRED'){
+    licenseBlock.style.display = 'block';
+    freeTrialMsg.style.display = 'none';
+    trialExpiredMsg.style.display = 'block';
+    getLicenseMsg.style.display = 'block';
+    getLicenseButton.style.display = 'block';
+}
+
+        $("#qr_bell_owner").html(name);
+        $("#trialExpiryDate").html(trialExpiryDate);
+
+
 }
 
 function getName(){
     if(window.location.search){
         $("#qr_bell_owner").html(name);
+        $("#registrationDate").html(createdDate);
     }
 }
 
@@ -85,7 +124,6 @@ var myCall;
 function answer(){
     Android.answerCall();
     if(myCall){
-        myCall.answer(myStream);
         myCall.on("stream",connectCall);
         $("#call_notification_popup").modal("hide");
     }
