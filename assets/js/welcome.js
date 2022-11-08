@@ -1,4 +1,4 @@
-const baseUrl ="http://localhost:5000/qrbell/";
+const baseUrl ="http://qrbell-env.eba-t3k37nvp.ap-south-1.elasticbeanstalk.com/qrbell/";
 
 var otpBlock = document.getElementById('otpBlock');
 var registerBlock = document.getElementById('registerBlock');
