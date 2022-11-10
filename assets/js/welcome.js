@@ -13,6 +13,7 @@ function callApi(method, endPoint, data){
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Access-Control-Allow-Origin","*");
 
     var request = {
             method: method,
@@ -66,6 +67,7 @@ function submitOtp(){
 
     var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin","*");
 
         var request = {
                 method: 'POST',
@@ -145,6 +147,7 @@ function registerUser(){
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Access-Control-Allow-Origin","*");
 
         var request = {
                 method: 'POST',

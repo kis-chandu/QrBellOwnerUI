@@ -92,6 +92,7 @@ console.log('QR Code Requesting for number '+phone);
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Access-Control-Allow-Origin","*");
 
     var raw = JSON.stringify({
         "phoneNumber": phone
