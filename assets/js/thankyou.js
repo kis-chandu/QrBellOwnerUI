@@ -1,4 +1,4 @@
-const qrBellHost = 'http://qrbell-env.eba-t3k37nvp.ap-south-1.elasticbeanstalk.com/qrbell/';
+const qrBellHost = 'https://qrbell-env.eba-t3k37nvp.ap-south-1.elasticbeanstalk.com/qrbell/';
 
 var name;
 var isdCode;
