@@ -11,6 +11,6 @@ app.get('/thankYou', function(req, res){
     res.sendFile(path.join(__dirname,"views/thankYou.html"));
 });
 
-app.listen("9002",(req,res)=>{
+app.listen("8080",(req,res)=>{
     console.log("Server started");
 })

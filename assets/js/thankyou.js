@@ -1,4 +1,4 @@
-const qrBellHost = 'https://qrbell-env.eba-t3k37nvp.ap-south-1.elasticbeanstalk.com/qrbell/';
+const qrBellHost = 'https://qrbell-env.eba-8c7fvwmj.ap-northeast-1.elasticbeanstalk.com/qrbell/';
 
 var name;
 var isdCode;
@@ -95,6 +95,7 @@ console.log('QR Code Requesting for number '+phone);
     myHeaders.append("Access-Control-Allow-Origin","*");
 
     var raw = JSON.stringify({
+        "isdCode":isdCode,
         "phoneNumber": phone
     });
 
@@ -153,7 +154,7 @@ function connectCall(remoteStream){
 
 function peerSetup(){
 
-   const peer = new Peer(phone);
+   const peer = new Peer(isdCode+phone);
 
    console.log('Peer set up for number '+phone);
 

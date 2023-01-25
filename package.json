@@ -1,14 +1,24 @@
 {
-  "name": "qrbellownerui",
+  "name": "qrbellloginui",
   "version": "1.0.0",
-  "description": "QR Bell Owner UI",
+  "description": "QR Bell Login UI",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://qrbell-admin@bitbucket.org/qrbell/qrbellloginui.git"
   },
   "author": "Chandrakant Gorai",
   "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/qrbell/qrbellloginui/issues"
+  },
+  "homepage": "https://bitbucket.org/qrbell/qrbellloginui#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
   }
 }
